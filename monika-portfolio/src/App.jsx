@@ -12,7 +12,8 @@ import Achievements     from './components/sections/Achievements';
 import Education       from './components/sections/Education';
 import Contact          from './components/sections/Contact';
 
-import { heroVideo } from './data/portfolio';
+import { heroVideo, heroVideoWebm, heroVideoLowRes, heroPoster } from './data/portfolio';
+import { useEffect, useState } from 'react';
 
 const Divider = () => <div className="section-divider" />;
 
@@ -25,18 +26,12 @@ export default function App() {
 
       {/* Global background video (covers entire viewport) */}
       {heroVideo && (
-        <>
-          <video
-            className="hero-video fixed inset-0 w-full h-full object-cover"
-            src={heroVideo}
-            autoPlay
-            muted
-            loop
-            playsInline
-            aria-hidden="true"
-          />
-          <div className="hero-video-overlay fixed inset-0 pointer-events-none" aria-hidden="true" />
-        </>
+        <HeroBackground
+          mp4={heroVideo}
+          webm={heroVideoWebm}
+          lowRes={heroVideoLowRes}
+          poster={heroPoster}
+        />
       )}
 
       <main className="relative z-10">
@@ -62,6 +57,45 @@ export default function App() {
       </main>
 
       <Footer />
+    </>
+  );
+}
+
+function HeroBackground({ mp4, webm, lowRes, poster }) {
+  const [isSmall, setIsSmall] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 767px)');
+    const onChange = () => setIsSmall(mq.matches);
+    onChange();
+    mq.addEventListener ? mq.addEventListener('change', onChange) : mq.addListener(onChange);
+    return () => mq.removeEventListener ? mq.removeEventListener('change', onChange) : mq.removeListener(onChange);
+  }, []);
+
+  // Choose a low-res source on small screens when available
+  const selectedMp4 = isSmall && lowRes ? lowRes : mp4;
+  const selectedWebm = isSmall && lowRes ? lowRes.replace(/\.mp4$/i, '.webm') : webm;
+
+  // If mobile and we have a poster but no selected video, render poster image instead
+  if (isSmall && poster && !selectedMp4 && !selectedWebm) {
+    return <img src={poster} alt="hero poster" className="hero-video fixed inset-0 w-full h-[45vh] object-cover" aria-hidden="true" />;
+  }
+
+  return (
+    <>
+      <video
+        className="hero-video fixed inset-0 w-full h-full object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+        poster={poster || undefined}
+        aria-hidden="true"
+      >
+        {selectedWebm ? <source src={selectedWebm} type="video/webm" /> : null}
+        {selectedMp4 ? <source src={selectedMp4} type="video/mp4" /> : null}
+      </video>
+      <div className="hero-video-overlay fixed inset-0 pointer-events-none" aria-hidden="true" />
     </>
   );
 }

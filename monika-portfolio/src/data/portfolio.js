@@ -21,6 +21,12 @@ export const meta = {
 
 // Optional hero background video. Set to `null` to disable.
 export const heroVideo = 'https://www.pexels.com/download/video/3141210/'; // replace with your MP4 URL
+// Optional WebM source for better compression on supporting browsers.
+export const heroVideoWebm = 'https://ecard.enter-media.org/upload/iblock/433/43305178eb8f792dfc7a5e0bcde855a5.webm';
+// Optional low-res MP4 used on small screens to save bandwidth.
+export const heroVideoLowRes = 'https://www.pexels.com/download/video/36627993/';
+// Optional poster image to show as fallback or on mobile.
+export const heroPoster = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKpD-8FGMa6RbPeHeUg3nzp1B_jOPu9J5hiQ&s';
 
 export const about = {
   paragraphs: [
