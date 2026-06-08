@@ -268,6 +268,15 @@ export default function MonikaTerminal() {
   const outRef    = useRef(null);
   const inRef     = useRef(null);
   const idleIdx   = useRef(0);
+  const [isCompact, setIsCompact] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 1024px)");
+    const update = () => setIsCompact(media.matches);
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
   const lastPulse = useRef(0);
 
   // auto-scroll
@@ -363,8 +372,11 @@ export default function MonikaTerminal() {
     inRef.current?.focus();
   };
 
-  // boot
+  // boot (guarded so dev StrictMode remounts don't trigger duplicate output)
   useEffect(() => {
+    if (typeof window !== 'undefined' && window.__monikaTerminalBooted) return;
+    if (typeof window !== 'undefined') window.__monikaTerminalBooted = true;
+
     const boot = async () => {
       await addLine(<span style={{ color:C.muted }}>monika.exe · v2026.1 · initialising...</span>, 200);
       await addLine(<span style={{ color:C.muted }}>loading portfolio data.........<span style={{ color:C.green }}> ✓</span></span>, 600);
@@ -422,10 +434,11 @@ export default function MonikaTerminal() {
         ════════════════════════════════════════════════════════
       */}
       <div style={{
-          position: "absolute",
-          top: "92px",          /* keep high, just under the fixed nav */
-          right: "120px",
-        width: "430px",
+          position: isCompact ? "relative" : "absolute",
+          top: isCompact ? "auto" : "92px",
+          right: isCompact ? "auto" : "120px",
+        width: isCompact ? "min(100%, 360px)" : "430px",
+        margin: isCompact ? "10px auto 0" : 0,
         display: "flex",
         flexDirection: "column",
         alignItems: "stretch",
@@ -433,16 +446,16 @@ export default function MonikaTerminal() {
         zIndex: 900,
         pointerEvents: "none",  /* let clicks pass through gaps */
         fontFamily: "'Space Mono', monospace",
-        maxHeight: "calc(100vh - 112px)",
+        maxHeight: isCompact ? "none" : "calc(100vh - 112px)",
         overflowY: "visible",
       }}>
 
         {/* ── PORTRAIT CARD ── */}
         <div style={{
-          width: "260px",
-          height: 180,
+          width: isCompact ? "100%" : "260px",
+          height: isCompact ? 155 : 180,
           position: "relative",
-          alignSelf: "flex-end",
+          alignSelf: isCompact ? "center" : "flex-end",
           border: `1px solid ${C.border}`,
           background: C.surf,
           overflow: "hidden",
@@ -514,9 +527,9 @@ export default function MonikaTerminal() {
 
         {/* ── TERMINAL CARD ── */}
         <div style={{
-          width:"400px",
-          alignSelf:"flex-start",
-          marginLeft:"-40px",
+          width: isCompact ? "100%" : "400px",
+          alignSelf: isCompact ? "center" : "flex-start",
+          marginLeft: isCompact ? 0 : "-40px",
           border:`1px solid ${C.border}`,
           background: C.surf2,
           display:"flex", flexDirection:"column",
@@ -537,7 +550,7 @@ export default function MonikaTerminal() {
             ref={outRef}
             className="mk-scroll"
             style={{
-              height:180,
+              height: isCompact ? 170 : 200,
               overflowY:"auto",
               padding:"10px 12px 6px",
               fontSize:10,
@@ -585,8 +598,8 @@ export default function MonikaTerminal() {
 
         {/* ── PILLS ── */}
         <div style={{
-          width:"300px",
-          alignSelf:"flex-end",
+          width: isCompact ? "100%" : "300px",
+          alignSelf: isCompact ? "center" : "flex-end",
           border:`1px solid ${C.border}`,
           background: C.surf,
           padding:"7px 9px 9px",

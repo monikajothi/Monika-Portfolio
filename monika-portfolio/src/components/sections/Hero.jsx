@@ -8,7 +8,7 @@ export default function Hero() {
 
   return (
     <div className="relative">
-      <section className="relative min-h-screen flex items-center justify-center px-6 md:px-10 pt-20 pb-12 overflow-hidden">
+      <section className="relative min-h-screen flex flex-col items-center justify-center px-6 md:px-10 pt-20 pb-12 overflow-hidden">
 
         {/* Animated grid */}
         <div className="hero-grid absolute inset-0 pointer-events-none" aria-hidden="true" />
