@@ -63,6 +63,7 @@ export default function App() {
 
 function HeroBackground({ mp4, webm, lowRes, poster }) {
   const [isSmall, setIsSmall] = useState(false);
+  const [showPoster, setShowPoster] = useState(false);
 
   useEffect(() => {
     const mq = window.matchMedia('(max-width: 767px)');
@@ -78,11 +79,14 @@ function HeroBackground({ mp4, webm, lowRes, poster }) {
 
   // If mobile and we have a poster but no selected video, render poster image instead
   if (isSmall && poster && !selectedMp4 && !selectedWebm) {
-    return <img src={poster} alt="hero poster" className="hero-video fixed inset-0 w-full h-[45vh] object-cover" aria-hidden="true" />;
+    return <img src={poster} alt="hero poster" className="hero-video fixed inset-0 w-full h-full object-cover" aria-hidden="true" />;
   }
 
   return (
     <>
+      {showPoster ? (
+        <img src={poster} alt="hero poster" className="hero-video fixed inset-0 w-full h-full object-cover" aria-hidden="true" />
+      ) : (
       <video
         className="hero-video fixed inset-0 w-full h-full object-cover"
         autoPlay
@@ -91,10 +95,13 @@ function HeroBackground({ mp4, webm, lowRes, poster }) {
         playsInline
         poster={poster || undefined}
         aria-hidden="true"
+        onError={() => setShowPoster(true)}
+        onLoadedData={() => setShowPoster(false)}
       >
         {selectedWebm ? <source src={selectedWebm} type="video/webm" /> : null}
         {selectedMp4 ? <source src={selectedMp4} type="video/mp4" /> : null}
       </video>
+      )}
       <div className="hero-video-overlay fixed inset-0 pointer-events-none" aria-hidden="true" />
     </>
   );
