@@ -12,7 +12,7 @@ export const meta = {
   tagline: 'Building intelligent systems at the intersection of AI · Full Stack · Data ',
   badge: '⬡ Full Stack · AI/ML · Data Science',
   status: 'Open to Opportunities',
-  cgpa: '8.40',
+  cgpa: '8.43',
   college: 'Kongu Engineering College',
   degree: 'B.Tech — Artificial Intelligence & Data Science',
   graduationYear: '2026',
@@ -30,7 +30,7 @@ export const heroPoster = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9G
 
 export const about = {
   paragraphs: [
-    `I'm a <strong>Full Stack AI Engineer</strong> graduated in 2026 from Kongu Engineering College with a B.Tech in Artificial Intelligence and Data Science with CGPA of 8.40. My work lives at the intersection of intelligent systems and production engineering.`,
+    `I'm a <strong>Full Stack AI Engineer</strong> graduated in 2026 from Kongu Engineering College with a B.Tech in Artificial Intelligence and Data Science with CGPA of 8.43. My work lives at the intersection of intelligent systems and production engineering.`,
     `At PunchBiz, I shipped a <strong>production-ready billing and inventory system</strong> — a full-stack MERN application serving live clients. I also embedded ML-based demand forecasting directly into the inventory workflow, turning data into decisions.`,
     `My flagship project — a <strong>Hallucination-Aware ML Assistant</strong> — focuses on reducing hallucinations through a custom multi-signal trust scoring system. It's not just AI; it's accountable AI.`,
     `Beyond engineering, I'm a <strong>Lead Anchor</strong> for my college's Cultural & Music Club, published in IEEE and ACL Anthology, and a two-time paper presentation prizewinner. I build things that matter — technically and beyond.`,
@@ -172,7 +172,18 @@ export const projects = [
     demo: null,
   },
   {
-    num: '// 02',
+  num: '// 02',
+  type: 'Full Stack + Mobile',
+  title: 'Wellness Tracker',
+  accentColor: 'var(--pink)',
+  desc: 'Full-stack personal wellness platform for tracking daily habits, hydration, mood, sleep, movement, nutrition, journaling, and cycle analytics, with native Android support and automated CI/CD.',
+  impact: '🌱 Personalized wellness tracking · native Android app · automated CI/CD',
+  stack: ['MERN', 'React', 'REST API', 'MongoDB', 'Capacitor', 'GitHub Actions'],
+  github: 'https://github.com/monikajothi/Personal-Tracker',
+  demo: 'https://personal-tracker-two-pi.vercel.app/',
+},
+  {
+    num: '// 03',
     type: 'Full Stack + ML',
     title: 'Inventory Management System',
     accentColor: 'var(--purple)',
@@ -183,7 +194,7 @@ export const projects = [
     demo: 'https://inventory-management-4.onrender.com/login',
   },
   {
-    num: '// 03',
+    num: '// 04',
     type: 'AI Web App',
     title: 'SafeBite AI — Ingredients Safety Checker',
     accentColor: 'var(--pink)',
@@ -194,7 +205,7 @@ export const projects = [
     demo: 'https://food-safety-checker.vercel.app/',
   },
   {
-    num: '// 04',
+    num: '// 05',
     type: 'Data Viz',
     title: 'Crime Analysis Dashboard',
     accentColor: 'var(--amber)',
@@ -205,7 +216,7 @@ export const projects = [
     demo: null,
   },
    {
-    num: '// 05',
+    num: '// 06',
     type: 'Full Stack',
     title: 'E-Commerce Website',
     accentColor: 'var(--purple)',
@@ -216,7 +227,7 @@ export const projects = [
     demo: null,
   },
     {
-    num: '// 06',
+    num: '// 07',
     type: 'Data / ML',
     title: 'Document Classifier',
     accentColor: 'var(--cyan)',
@@ -227,7 +238,7 @@ export const projects = [
     demo: 'https://document-classifier-fnum.onrender.com/',
   },
   {
-    num: '// 07',
+    num: '// 08',
     type: 'Mobile · ML',
     title: 'Plant Disease Prediction App',
     accentColor: 'var(--green)',
@@ -238,7 +249,7 @@ export const projects = [
     demo: null,
   },
    {
-  num: '// 08',
+  num: '// 09',
   type: 'Java',
   title: 'Parking Lot System ',
   accentColor: 'var(--amber)',
