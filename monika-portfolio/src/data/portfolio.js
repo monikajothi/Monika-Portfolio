@@ -16,7 +16,7 @@ export const meta = {
   college: 'Kongu Engineering College',
   degree: 'B.Tech — Artificial Intelligence & Data Science',
   graduationYear: '2026',
-  resumeUrl: 'https://drive.google.com/file/d/1yDTTa0Pnm4n58RKOvHx5KB3WBFQ_nPEj/view?usp=sharing', // replace with actual PDF URL
+  resumeUrl: 'https://drive.google.com/file/d/18l5tgZqFZUOczrB5FUYAPjP_tfhArv_F/view?usp=sharing', // replace with actual PDF URL
 };
 
 // Optional hero background video. Set to `null` to disable.
@@ -372,7 +372,7 @@ export const education = [
     degree: 'B.Tech in Artificial Intelligence and Data Science',
     institution: 'Kongu Engineering College',
     period: '2022–2026',
-    score: 'CGPA: 8.40',
+    score: 'CGPA: 8.43',
     location: 'Erode, Tamil Nadu',
   },
   {
