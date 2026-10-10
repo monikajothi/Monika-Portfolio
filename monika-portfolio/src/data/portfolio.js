@@ -48,7 +48,7 @@ export const about = {
       { type: 'indent2', content: [{ t: 'str', v: '"RAG Systems"' }, { t: 'plain', v: ', ' }, { t: 'str', v: '"LLM Engineering",' }] },
       { type: 'indent2', content: [{ t: 'str', v: '"Full Stack"' }, { t: 'plain', v: ', ' }, { t: 'str', v: '"Data Science"' }] },
       { type: 'indent', content: [{ t: 'plain', v: '],' }] },
-      { type: 'indent', content: [{ t: 'key', v: 'certified' }, { t: 'plain', v: ': ' }, { t: 'str', v: '"Azure AI Engineer AZ-102"' }] },
+      { type: 'indent', content: [{ t: 'key', v: 'certified' }, { t: 'plain', v: ': ' }, { t: 'str', v: '"Azure AI-102 · Oracle Agentic AI"' }] },
       { type: 'code', content: [{ t: 'plain', v: '};' }] },
       { type: 'comment', content: '// currently: building the future of AI' },
     ],
@@ -57,15 +57,27 @@ export const about = {
 };
 
 export const skills = [
+   {
+    icon: '💻',
+    title: 'Programming Languages',
+    tags: [
+      { label: 'Python', accent: true },
+      { label: 'Java', accent: true },
+      { label: 'SQL' },
+      { label: 'C' },
+      { label: 'R'},
+    ],
+  },
   {
     icon: '🤖',
     title: 'AI / LLM Engineering',
     tags: [
       { label: 'RAG Pipelines', accent: true },
       { label: 'LLM Integration', accent: true },
+      { label: 'Agentic AI', accent: true },
+      { label: 'MCP (Model Context Protocol)' },
       { label: 'Prompt Engineering' },
       { label: 'FAISS' },
-
       { label: 'Embeddings' },
       { label: 'Vector Search' },
       { label: 'RAGAS' },
@@ -90,11 +102,10 @@ export const skills = [
     icon: '🧠',
     title: 'ML & Data Science',
     tags: [
-      { label: 'Python', accent: true },
-      { label: 'Scikit-learn' },
+      { label: 'Scikit-learn', accent: true },
       { label: 'NLP' },
       { label: 'NLTK' },
-      { label: 'OCR' },
+      { label: 'OCR', accent: true},
       { label: 'Demand Forecasting' },
       { label: 'Statistical Analysis' },
     ],
@@ -104,11 +115,10 @@ export const skills = [
     title: 'Cloud & DevOps',
     tags: [
       { label: 'Microsoft Azure', accent: true },
+      { label: 'Microsoft Foundry' },
       { label: 'Docker' },
       { label: 'Git / GitHub' },
       { label: 'Postman' },
-      { label: 'Java' },
-      { label: 'SQL' },
     ],
   },
   {
@@ -262,6 +272,17 @@ export const projects = [
 ];
 
 export const certifications = [
+   {
+    icon: '🤖',
+    iconBg: 'rgba(255,90,60,0.1)',
+    iconBorder: 'rgba(255,90,60,0.2)',
+    title: 'Agentic AI Foundations Associate',
+    sub: '1Z0-1157-26 · Oracle University',
+    year: '2026',
+    credentialUrl:
+      'https://catalog-education.oracle.com/pls/certview/sharebadge?id=05573A8AE1A3693C2E2219FA9EFF97AB3272E3D5399D57D1AC6EEA02FCE2A2F7',
+    cardBorder: '',
+  },
   {
     icon: '🏅',
     iconBg: 'rgba(168,85,247,0.1)',

@@ -22,7 +22,7 @@ const DATA = {
   about: {
     name: "Monika Jothi", role: "Full Stack AI Engineer",
     location: "Salem, Tamil Nadu 🇮🇳", college: "Kongu Engineering College",
-    degree: "B.Tech — AI & Data Science", cgpa: "8.40",
+    degree: "B.Tech — AI & Data Science", cgpa: "8.43",
     status: "Open to Opportunities",
     bio: "Engineering trust-aware RAG pipelines, LLM-integrated apps, and production-grade full-stack systems. 0.000 hallucination rate ML assistant builder.",
   },
@@ -40,7 +40,6 @@ const DATA = {
   ],
   exp: [
     { period:"Jul–Dec 2024", role:"Full Stack Data Scientist", org:"PunchBiz (Remote)",         desc:"Built production billing system (MERN). Embedded ML demand forecasting. Served live clients." },
-    { period:"2022–2026",    role:"B.Tech AI & Data Science",  org:"Kongu Engineering College", desc:"CGPA: 8.40. IEEE + ACL publications. Azure AI certified. Lead Anchor, Cultural Club." },
   ],
   awards: [
     { prize:"🥇 1st Prize", event:"Paper Presentation — KEC", desc:"Stress Identification using ML", year:"2024" },
