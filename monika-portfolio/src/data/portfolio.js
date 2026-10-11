@@ -16,8 +16,7 @@ export const meta = {
   college: 'Kongu Engineering College',
   degree: 'B.Tech — Artificial Intelligence & Data Science',
   graduationYear: '2026',
-  resumeUrl: 'https://drive.google.com/file/d/18l5tgZqFZUOczrB5FUYAPjP_tfhArv_F/view?usp=sharing', // replace with actual PDF URL
-};
+  resumeUrl: 'https://drive.google.com/file/d/1KziiU5S5OODdYED8SLFHSgGCKAJ7_pwt/view?usp=sharing',}
 
 // Optional hero background video. Set to `null` to disable.
 export const heroVideo = 'https://www.pexels.com/download/video/3141210/'; // replace with your MP4 URL
