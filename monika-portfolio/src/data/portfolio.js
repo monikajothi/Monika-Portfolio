@@ -41,14 +41,14 @@ export const about = {
       { type: 'code', content: [{ t: 'cmd', v: 'const' }, { t: 'plain', v: ' ' }, { t: 'key', v: 'engineer' }, { t: 'plain', v: ' = {' }] },
       { type: 'indent', content: [{ t: 'key', v: 'name' }, { t: 'plain', v: ': ' }, { t: 'str', v: '"Monika Jothi",' }] },
       { type: 'indent', content: [{ t: 'key', v: 'role' }, { t: 'plain', v: ': ' }, { t: 'str', v: '"Full Stack AI Engineer",' }] },
-      { type: 'indent', content: [{ t: 'key', v: 'location' }, { t: 'plain', v: ': ' }, { t: 'str', v: '"Salem, Tamil Nadu 🇮🇳",' }] },
+      { type: 'indent', content: [{ t: 'key', v: 'location' }, { t: 'plain', v: ': ' }, { t: 'str', v: '"Salem, Tamil Nadu, IN",' }] },
       { type: 'indent', content: [{ t: 'key', v: 'status' }, { t: 'plain', v: ': ' }, { t: 'val', v: '"Open to Opportunities",' }] },
       { type: 'indent', content: [{ t: 'key', v: 'education' }, { t: 'plain', v: ': ' }, { t: 'str', v: '"B.Tech AI & DS, KEC",' }] },
       { type: 'indent', content: [{ t: 'key', v: 'passions' }, { t: 'plain', v: ': [' }] },
       { type: 'indent2', content: [{ t: 'str', v: '"RAG Systems"' }, { t: 'plain', v: ', ' }, { t: 'str', v: '"LLM Engineering",' }] },
       { type: 'indent2', content: [{ t: 'str', v: '"Full Stack"' }, { t: 'plain', v: ', ' }, { t: 'str', v: '"Data Science"' }] },
       { type: 'indent', content: [{ t: 'plain', v: '],' }] },
-      { type: 'indent', content: [{ t: 'key', v: 'certified' }, { t: 'plain', v: ': ' }, { t: 'str', v: '"Azure AI-102 · Oracle Agentic AI"' }] },
+      { type: 'indent', content: [{ t: 'key', v: 'certified' }, { t: 'plain', v: ': ' }, { t: 'str', v: '"Azure AI-102 · Oracle Agentic AI · Cisco Data Analytics"' }] },
       { type: 'code', content: [{ t: 'plain', v: '};' }] },
       { type: 'comment', content: '// currently: building the future of AI' },
     ],
@@ -153,7 +153,6 @@ export const experience = [
     company: 'PunchBiz',
     points: [
       'Built a production-ready billing system with React.js, Tailwind CSS, and MongoDB — enabling invoice generation, inventory tracking, and real-time business reporting for live clients.',
-      'Embedded an ML-based demand forecasting model into the inventory workflow, delivering data-driven stock recommendations that reduced manual estimation effort significantly.',
       'Collaborated directly with stakeholders to translate business requirements into scalable full-stack features; supported client onboarding through live demos and documentation.',
     ],
   },
@@ -294,12 +293,28 @@ export const certifications = [
       'https://learn.microsoft.com/api/credentials/share/en-us/MonikaRJ-7411/3DD62EC95A615210?sharingId=42943EF0F92B886E',
     cardBorder: '',
   },
+
+    {
+    icon: '📊',
+    iconBg: 'rgba(0,245,255,0.08)',
+    iconBorder: 'rgba(0,245,255,0.2)',
+    title: 'Data Analytics Essentials',
+    sub: 'Cisco Networking Academy',
+    year: '2026',
+    credentialUrl:
+      'https://www.credly.com/badges/1fbff8dd-d023-4532-a793-6f05371acd8a/public_url',
+    cardBorder: '',
+  },
+];
+
+export const publications = [
   {
     icon: '🔬',
     iconBg: 'rgba(0,255,136,0.08)',
     iconBorder: 'rgba(0,255,136,0.2)',
     title: 'IEEE Publication',
     sub: 'Hybrid Ensemble Learning for Brain Hemorrhage Classification',
+    venue: 'IEEE',
     year: '2026',
     paperUrl: 'https://ieeexplore.ieee.org/document/11436766',
     cardBorder: '',
@@ -310,6 +325,7 @@ export const certifications = [
     iconBorder: 'rgba(0,245,255,0.2)',
     title: 'ACL Anthology Publication',
     sub: 'Stress Identification using ML Techniques',
+    venue: 'ACL Anthology',
     year: '2024',
     paperUrl: 'https://aclanthology.org/2024.ltedi-1.37/',
     cardBorder: 'borderLeft',
@@ -384,6 +400,8 @@ export const navLinks = [
   { href: '#experience',   label: 'Exp' },
   { href: '#projects',     label: 'Projects' },
   { href: '#education',    label: 'Education' },
+  { href: '#certifications', label: 'Certifications' },
+  { href: '#publications',   label: 'Publications' },
   { href: '#achievements', label: 'Awards' },
   { href: '#contact',      label: 'Contact' },
 ];

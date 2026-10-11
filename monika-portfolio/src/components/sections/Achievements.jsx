@@ -30,7 +30,7 @@ export default function Achievements() {
   return (
     <section id="achievements" className="px-6 md:px-10 py-16 max-w-[1100px] mx-auto">
       <div ref={headerRef} className="reveal">
-        <SectionHeader label="06 — Recognition" title="Awards &" accent="Wins" />
+        <SectionHeader label="07 — Recognition" title="Awards &" accent="Wins" />
       </div>
 
       <div ref={listRef} className="flex flex-col gap-3 mt-10">

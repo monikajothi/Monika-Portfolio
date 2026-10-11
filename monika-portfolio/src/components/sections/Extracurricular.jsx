@@ -10,7 +10,7 @@ export default function Extracurricular() {
   return (
     <section id="extracurriculars" className="px-6 md:px-10 py-16 max-w-[1100px] mx-auto">
       <div ref={headerRef} className="reveal">
-        <SectionHeader label="07 — Activities" title="Extra Curricular" accent="Involvement" />
+        <SectionHeader label="08 — Activities" title="Extra Curricular" accent="Involvement" />
       </div>
 
       <div ref={listRef} className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -41,6 +41,15 @@ const DATA = {
   exp: [
     { period:"Jul–Dec 2024", role:"Full Stack Data Scientist", org:"PunchBiz (Remote)",         desc:"Built production billing system (MERN). Embedded ML demand forecasting. Served live clients." },
   ],
+  certifications: [
+    { name:"Agentic AI Foundations Associate", issuer:"Oracle University", id:"1Z0-1157-26", year:"2026" },
+    { name:"Azure AI Engineer Associate", issuer:"Microsoft Certified", id:"AZ-AI-102", year:"2025" },
+    { name:"Data Analytics Essentials", issuer:"Cisco Networking Academy", id:"Credly badge", year:"2026" },
+  ],
+  publications: [
+    { venue:"IEEE", title:"Hybrid Ensemble Learning for Brain Hemorrhage Classification", year:"2026" },
+    { venue:"ACL Anthology", title:"Stress Identification using ML Techniques", year:"2024" },
+  ],
   awards: [
     { prize:"🥇 1st Prize", event:"Paper Presentation — KEC", desc:"Stress Identification using ML", year:"2024" },
     { prize:"🥈 2nd Prize", event:"Idea Presentation — KEC",  desc:"SafeBite AI",                   year:"2024" },
@@ -54,7 +63,7 @@ const DATA = {
   },
 };
 
-const PILLS = ["monika --help","monika --about","monika --skills","monika --projects","monika --exp","monika --awards","monika --contact","clear"];
+const PILLS = ["monika --help","monika --about","monika --skills","monika --projects","monika --exp","monika --certifications","monika --publications","monika --awards","monika --contact","clear"];
 const IDLE  = ["keep building 💻","data + code = solutions 🚀","focus · code · achieve 🎯","discipline today ✨"];
 const CAT_COLORS  = [C.cyan, C.purple, C.green, C.amber];
 const PROJ_COLORS = [C.cyan, C.purple, C.pink, C.amber];
@@ -89,7 +98,9 @@ function buildLines(cmd) {
       ["monika --about","Who I am, my story"],
       ["monika --skills","Tech stack + bars"],
       ["monika --projects","Things I've built"],
-      ["monika --exp","Work & education"],
+      ["monika --exp","Work experience & timeline"],
+      ["monika --certifications","Industry credentials"],
+      ["monika --publications","Research papers"],
       ["monika --awards","Prizes & achievements"],
       ["monika --contact","Let's work together"],
       ["clear","Clear the terminal"],
@@ -166,6 +177,30 @@ function buildLines(cmd) {
       p(<b style={{ color:C.ink }}>{"  "+e.role}</b>, d); d += 60;
       p(<div style={{ color:C.amber }}>{"  "+e.org}</div>, d); d += 60;
       p(<div style={{ color:C.muted2 }}>{"  "+e.desc}</div>, d); d += 80;
+    }
+  }
+
+  else if (cmd === "monika --certifications") {
+    bl(40);
+    p(<b style={{ color:C.purple }}>{"  CERTIFICATIONS"}</b>, 70);
+    p(<b style={{ color:C.purple }}>{"  =============================="}</b>, 100);
+    let d = 125;
+    for (const cert of DATA.certifications) {
+      p(<div><span style={{ color:C.cyan }}>{"  "+cert.year+" "}</span><span style={{ color:C.ink }}>{cert.name}</span></div>, d);
+      p(<div><span style={{ color:C.muted2 }}>{"       "+cert.issuer}</span><span style={{ color:C.amber }}>{" | "+cert.id}</span></div>, d+45);
+      d += 115;
+    }
+  }
+
+  else if (cmd === "monika --publications") {
+    bl(40);
+    p(<b style={{ color:C.purple }}>{"  PUBLICATIONS"}</b>, 70);
+    p(<b style={{ color:C.purple }}>{"  =============================="}</b>, 100);
+    let d = 125;
+    for (const paper of DATA.publications) {
+      p(<div><span style={{ color:C.cyan }}>{"  "+paper.venue}</span><span style={{ color:C.muted }}>{" "+paper.year}</span></div>, d);
+      p(<div style={{ color:C.ink }}>{"  "+paper.title}</div>, d+45);
+      d += 115;
     }
   }
 
@@ -316,7 +351,8 @@ export default function MonikaTerminal() {
     const rxMap = {
       "monika --help":"loading help... ✨","monika --about":"hey there! 👋",
       "monika --skills":"flexing skills 💪","monika --projects":"showing builds 🚀",
-      "monika --exp":"timeline loading...","monika --awards":"trophy room 🏆",
+      "monika --exp":"timeline loading...","monika --certifications":"credentials loading...",
+      "monika --publications":"research loading...","monika --awards":"trophy room 🏆",
       "monika --contact":"let's connect! 💌",
     };
     showRx(rxMap[cmd] || "command not found 🤔");

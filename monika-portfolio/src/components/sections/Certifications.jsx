@@ -3,7 +3,7 @@ import { certifications } from '../../data/portfolio';
 import { useScrollReveal, useStaggerReveal } from '../../hooks/useScrollReveal';
 import SectionHeader from '../ui/SectionHeader';
 
-function CertCard({ icon, iconBg, iconBorder, title, sub, year, credentialUrl, paperUrl }) {
+function CertCard({ icon, iconBg, iconBorder, title, sub, year, credentialUrl }) {
   return (
     <div
       data-stagger
@@ -41,16 +41,6 @@ function CertCard({ icon, iconBg, iconBorder, title, sub, year, credentialUrl, p
           </a>
         )}
 
-        {paperUrl && (
-          <a
-            href={paperUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-outline inline-block text-[0.7rem]"
-          >
-            View Paper
-          </a>
-        )}
       </div>
     </div>
   );
@@ -63,7 +53,7 @@ export default function Certifications() {
   return (
     <section id="certifications" className="px-6 md:px-10 py-16 max-w-[1100px] mx-auto">
       <div ref={headerRef} className="reveal">
-        <SectionHeader label="05 — Credentials" title="Certified &" accent="Published" />
+        <SectionHeader label="05 — Certifications" title="Industry" accent="Credentials" />
       </div>
 
       <div

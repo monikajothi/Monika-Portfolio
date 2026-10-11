@@ -8,6 +8,7 @@ import Experience       from './components/sections/Experience';
 import Projects         from './components/sections/Projects';
 import Extracurricular  from './components/sections/Extracurricular';
 import Certifications   from './components/sections/Certifications';
+import Publications      from './components/sections/Publications';
 import Achievements     from './components/sections/Achievements';
 import Education       from './components/sections/Education';
 import Contact          from './components/sections/Contact';
@@ -48,6 +49,8 @@ export default function App() {
         <Education />
         <Divider />
         <Certifications />
+        <Divider />
+        <Publications />
         <Divider />
         <Achievements />
         <Divider />

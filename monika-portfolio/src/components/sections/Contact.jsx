@@ -37,7 +37,7 @@ export default function Contact() {
 
   return (
     <section id="contact" ref={ref} className="reveal px-6 md:px-10 py-16 max-w-[1100px] mx-auto">
-      <SectionHeader label="08 — Let's Connect" title="Open for" accent="Opportunities" />
+      <SectionHeader label="09 — Let's Connect" title="Open for" accent="Opportunities" />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 mt-10">
 
